@@ -12,9 +12,15 @@
 SAHAI bridges the financial literacy gap in India by offering:
 - **Voice-first interface** — speak naturally in Hindi/Hinglish
 - **Intelligent LLM** — Groq's Llama 3.3 70B for contextual financial advice
-- **Government schemes** — hardcoded knowledge of PM Mudra, Atal Pension, Sukanya Samridhi, etc.
+- **Government schemes** — hardcoded knowledge of PM Mudra, Atal Pension, Sukanya Samriddhi, etc.
 - **Multi-channel** — web app + WhatsApp Sandbox integration
 - **Demo personas** — 3 realistic Indian personas with different income profiles
+
+## 📄 Product Requirements Document
+
+The full PRD — problem research, personas, market sizing, 7M framework,
+functional/non-functional requirements, architecture, metrics and roadmap —
+is here: **[SAHAI PRD (PDF)](docs/SAHAI_PRD.pdf)**
 
 ## ✨ Key Features
 
@@ -59,8 +65,9 @@ SAHAI/
 │   ├── tailwind.config.js
 │   └── package.json
 │
+├── docs/                       # PRD & Capstone Guidelines
 ├── .env                        # API keys (not in repo)
-├── CLAUDE.md                   # Development notes
+├── LICENSE                     # MIT License
 └── README.md                   # This file
 ```
 
@@ -75,7 +82,7 @@ SAHAI/
 
 **1. Clone the repository:**
 ```bash
-git clone https://github.com/YourUsername/sahai.git
+git clone https://github.com/harrysingh1908/sahai.git
 cd sahai
 ```
 
@@ -108,15 +115,15 @@ GROQ_API_KEY=gsk_your_groq_key_here
 TWILIO_ACCOUNT_SID=AC_your_twilio_sid
 TWILIO_AUTH_TOKEN=your_twilio_auth_token
 TWILIO_WHATSAPP_FROM=whatsapp:+14155238886
-TWILIO_WHATSAPP_TO=whatsapp:+917009820991
-TEST_RECIPIENT=whatsapp:+917009820991
+TWILIO_WHATSAPP_TO=whatsapp:+91XXXXXXXXXX
+TEST_RECIPIENT=whatsapp:+91XXXXXXXXXX
 ```
 
 ### Running the Application
 
 **Terminal 1 — Start Backend:**
 ```bash
-cd D:\SAHAI
+cd sahai
 uvicorn backend.main:app --reload --port 8000
 ```
 🟢 Backend runs at `http://127.0.0.1:8000`
@@ -193,9 +200,9 @@ Once you've joined the Twilio sandbox (send "join <keyword>" to +1 415 523 8886)
 
 | Persona | Occupation | Income | Location | Profile |
 |---------|-----------|--------|----------|---------|
-| **Ramesh Kumar** | Auto driver | ₹18k/month | Delhi | Has EMI, needs budgeting help |
-| **Priya Devi** | ASHA worker | ₹12k/month | Uttar Pradesh | No loans, wants to save |
-| **Suresh Yadav** | Kirana shop owner | ₹35k/month | Maharashtra | Business loan queries |
+| **Ramesh Kumar** | Auto driver | ₹18,000/month | Delhi | Has EMI, needs budgeting help |
+| **Priya Devi** | ASHA worker | ₹12,000/month | Uttar Pradesh | No loans, wants to save |
+| **Suresh Yadav** | Kirana shop owner | ₹35,000/month | Jaipur | Business loan queries |
 
 Each persona has hardcoded spending patterns and financial profiles for demo authenticity.
 
@@ -233,10 +240,10 @@ Each persona has hardcoded spending patterns and financial profiles for demo aut
 ## 📊 Government Schemes (Hardcoded)
 
 SAHAI knows about these Indian financial programs:
-- **PM Mudra Yojana** — Business loans up to ₹10 lakh
+- **PM Mudra Yojana** — Business loans up to ₹20 lakh
 - **Atal Pension Yojana** — Retirement security for informal sector
 - **PM-JAY** — Health insurance for BPL families
-- **Sukanya Samridhi** — Girls' education savings scheme
+- **Sukanya Samriddhi** — Girls' education savings scheme
 - **Pradhan Mantri Jan Dhan Yojana** — Basic banking access
 - **Fasal Bima Yojana** — Crop insurance
 - **PMSBY** — Accident insurance (₹12/year)
@@ -253,8 +260,8 @@ This is an **MVP demo**, not production software:
 
 ## 📈 Future Improvements
 
-- [ ] Switch to 70B LLM for smarter recommendations
-- [ ] Incoming WhatsApp bot (reply to user messages)
+- [ ] Scheduled nudges (APScheduler)
+- [ ] Multi-language support (Tamil, Marathi, Bengali)
 - [ ] Browser storage for chat persistence across reloads
 - [ ] Hindi error messages ("Dobara bolein" instead of raw errors)
 - [ ] Spending visualization with charts
@@ -271,13 +278,6 @@ This is an **MVP demo**, not production software:
 | Backend 500 error | Check Sarvam/Groq API keys; review backend logs |
 | Frontend won't load | Ensure backend is running on port 8000, check CORS |
 
-## 📝 Development Notes
-
-See `CLAUDE.md` for:
-- Detailed system prompts
-- API specifications
-- Architecture decisions
-- Known limitations
 
 ## 👨‍💻 Author
 
